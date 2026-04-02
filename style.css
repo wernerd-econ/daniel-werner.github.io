@@ -1,6 +1,6 @@
 /* ==========================================================================
    Daniel Werner - Personal Academic Website
-   Clean, minimalist academic style (inspired by Gentzkow site)
+   Minimalist single-column layout with top navigation
    ========================================================================== */
 
 /* ---------- Reset & Base ---------- */
@@ -11,22 +11,18 @@
 }
 
 body {
-    background: #fff;
-    font-family: "acumin-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 28px;
-    letter-spacing: 0.6px;
-    color: #333;
+    background: #fafaf8;
+    font-family: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 350;
+    line-height: 1.75;
+    color: #2c2c2c;
 }
 
 a {
-    color: #333;
+    color: #2c2c2c;
     text-decoration: none;
-}
-
-a:hover {
-    border-bottom: 1px solid #333;
+    transition: color 0.2s ease;
 }
 
 img {
@@ -34,166 +30,134 @@ img {
     height: auto;
 }
 
-/* ---------- Site Layout ---------- */
-.site {
+/* ---------- Top Navigation ---------- */
+.top-nav {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 0;
     display: flex;
-    min-height: 100vh;
-}
-
-/* ---------- Sidebar ---------- */
-.sidebar {
-    width: 300px;
-    min-width: 300px;
-    background: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    z-index: 10;
-}
-
-.site-header {
-    margin-top: 60px;
-    padding: 0 0 0 64px;
-    min-height: 200px;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 .site-name {
-    font-family: "acumin-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 22px;
+    font-family: "Libre Baskerville", "Georgia", serif;
+    font-size: 24px;
     font-weight: 700;
-    text-transform: uppercase;
-    line-height: 1.2;
-    letter-spacing: 1.5px;
-    color: #333;
+    letter-spacing: 0.01em;
+    color: #2c2c2c;
 }
 
 .site-name a {
-    color: #333;
-    border-bottom: none !important;
+    color: #2c2c2c;
 }
 
 .site-name a:hover {
-    border-bottom: none !important;
-}
-
-/* ---------- Navigation ---------- */
-.main-navigation {
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 2em 5% 0 64px;
+    color: #555;
 }
 
 .nav-menu {
     list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-menu li:first-child a {
-    padding-top: 0;
+    display: flex;
+    gap: 2em;
 }
 
 .nav-menu a {
-    display: block;
-    padding: 0.4em 0;
-    color: #333;
-    text-decoration: none;
-    border-bottom: none !important;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #777;
+    padding-bottom: 2px;
+    border-bottom: 1.5px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .nav-menu a:hover {
-    color: #555;
-    border-bottom: none !important;
+    color: #2c2c2c;
+    border-bottom: 1.5px solid #2c2c2c;
 }
 
 .current-menu-item a {
-    font-weight: 600;
+    color: #2c2c2c;
+    border-bottom: 1.5px solid #2c2c2c;
+}
+
+/* ---------- Divider ---------- */
+.nav-divider {
+    max-width: 720px;
+    margin: 24px auto 0;
+    padding: 0 24px;
+}
+
+.nav-divider hr {
+    border: none;
+    border-top: 1px solid #ddd;
 }
 
 /* ---------- Main Content ---------- */
 .site-content {
-    margin-left: 300px;
-    flex: 1;
-}
-
-.site-main {
-    padding-top: 260px;
-    max-width: 660px;
-}
-
-.content-area {
-    padding: 0 7.6923%;
-}
-
-/* ---------- Entry Content ---------- */
-.entry-content {
-    padding: 0;
-}
-
-.entry-content a,
-.paper-title a,
-.dataset-title a,
-.predoc-name a {
-    color: #38A5E1;
-    border-bottom: none;
-}
-
-.entry-content a:hover,
-.paper-title a:hover,
-.dataset-title a:hover,
-.predoc-name a:hover {
-    border-bottom: 1px solid #333;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
 }
 
 /* ---------- About Page ---------- */
+.about-layout {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+}
+
 .front-photo {
-    float: left;
-    margin-right: 80px;
-    margin-bottom: 1.5em;
-    width: 260px;
+    width: 200px;
+    min-width: 200px;
+    border-radius: 4px;
 }
 
-.links {
-    margin-bottom: 0.25em;
+.bio p {
+    margin-bottom: 1em;
 }
 
-.links a {
+.bio p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-links {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35em;
+}
+
+.contact-links a {
+    color: #6b7f64;
     font-size: 14px;
-    border-bottom: none !important;
-    color: #38A5E1;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
 }
 
-.links a:hover {
-    border-bottom: 1px solid #333 !important;
+.contact-links a:hover {
+    color: #2c2c2c;
 }
 
 .link-icon {
     font-size: 13px;
-    display: inline-block;
     width: 18px;
     text-align: center;
-    color: #666;
+    color: #999;
 }
 
 /* ---------- Section Headings ---------- */
-h1.page-title {
-    color: #757575;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 28px;
-    letter-spacing: 0.4px;
-    margin-bottom: 2em;
-}
-
 h2.section-heading {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 28px;
-    letter-spacing: -0.01em;
-    color: #6E6E6E;
+    font-family: "Libre Baskerville", "Georgia", serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #2c2c2c;
     margin-top: 2.5em;
     margin-bottom: 1em;
+    letter-spacing: 0.01em;
 }
 
 h2.section-heading:first-of-type {
@@ -207,136 +171,121 @@ h2.section-heading:first-of-type {
 }
 
 .paper-list li {
-    margin-bottom: 1.8em;
-    line-height: 1.6;
+    margin-bottom: 2em;
+    padding-left: 0;
 }
 
 .paper-title {
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.paper-title a {
+    color: #6b7f64;
+    border-bottom: 1px solid transparent;
+}
+
+.paper-title a:hover {
+    color: #2c2c2c;
+    border-bottom: 1px solid #2c2c2c;
 }
 
 .paper-authors {
-    color: #757575;
-    font-size: 13px;
+    color: #888;
+    font-size: 13.5px;
+    margin-top: 0.15em;
 }
 
 .paper-detail {
-    color: #757575;
-    font-size: 13px;
+    color: #888;
+    font-size: 13.5px;
     font-style: italic;
+    margin-top: 0.3em;
+    line-height: 1.65;
 }
 
 /* ---------- CV Page ---------- */
+.cv-download {
+    margin-bottom: 2.5em;
+}
+
+.cv-download a {
+    color: #6b7f64;
+}
+
+.cv-download a:hover {
+    color: #2c2c2c;
+}
+
 .cv-section {
     margin-bottom: 2.5em;
 }
 
 .cv-section h3 {
-    font-size: 15px;
-    font-weight: 600;
-    color: #6E6E6E;
+    font-family: "Libre Baskerville", "Georgia", serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #888;
     margin-bottom: 0.75em;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.06em;
 }
 
 .cv-entry {
     margin-bottom: 1em;
-    line-height: 1.6;
+    line-height: 1.65;
 }
 
 .cv-entry .cv-primary {
-    font-weight: 400;
+    font-weight: 450;
 }
 
 .cv-entry .cv-secondary {
-    color: #757575;
-    font-size: 13px;
+    color: #888;
+    font-size: 13.5px;
 }
 
 .cv-skills-grid {
     display: grid;
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: 100px 1fr;
     gap: 0.3em 1.5em;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .cv-skills-grid dt {
-    font-weight: 400;
-    color: #333;
+    font-weight: 450;
+    color: #2c2c2c;
 }
 
 .cv-skills-grid dd {
-    color: #757575;
-}
-
-/* ---------- Footer ---------- */
-.site-footer {
-    display: none;
+    color: #888;
 }
 
 /* ---------- Responsive ---------- */
-@media screen and (max-width: 59.6875em) {
-    .site {
+@media screen and (max-width: 640px) {
+    .top-nav {
         flex-direction: column;
-    }
-
-    .sidebar {
-        position: relative;
-        width: 100%;
-        min-width: 100%;
-        height: auto;
-        padding: 20px;
-    }
-
-    .site-header {
-        margin-top: 14px;
-        padding: 0;
-        min-height: auto;
-    }
-
-    .main-navigation {
-        margin: 1em 0;
+        gap: 1em;
+        padding-top: 32px;
     }
 
     .nav-menu {
-        display: flex;
         gap: 1.5em;
     }
 
-    .nav-menu a {
-        padding: 0.2em 0;
+    .about-layout {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .front-photo {
+        width: 100%;
+        max-width: 240px;
+        min-width: unset;
     }
 
     .site-content {
-        margin-left: 0;
-    }
-
-    .site-main {
-        padding-top: 40px;
-    }
-
-    .content-area {
-        padding: 0 5%;
-    }
-
-    .front-photo {
-        margin-right: 0;
-        float: none;
-        width: 100%;
-        max-width: 260px;
-        margin-bottom: 1.5em;
-    }
-}
-
-@media screen and (max-width: 38.75em) {
-    .nav-menu {
-        flex-wrap: wrap;
-        gap: 0.5em 1.5em;
-    }
-
-    .front-photo {
-        max-width: 100%;
+        padding: 32px 20px 60px;
     }
 }
