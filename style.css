@@ -1,0 +1,342 @@
+/* ==========================================================================
+   Daniel Werner - Personal Academic Website
+   Clean, minimalist academic style (inspired by Gentzkow site)
+   ========================================================================== */
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fff;
+    font-family: "acumin-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 28px;
+    letter-spacing: 0.6px;
+    color: #333;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    border-bottom: 1px solid #333;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---------- Site Layout ---------- */
+.site {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+    width: 300px;
+    min-width: 300px;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 10;
+}
+
+.site-header {
+    margin-top: 60px;
+    padding: 0 0 0 64px;
+    min-height: 200px;
+}
+
+.site-name {
+    font-family: "acumin-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 1.5px;
+    color: #333;
+}
+
+.site-name a {
+    color: #333;
+    border-bottom: none !important;
+}
+
+.site-name a:hover {
+    border-bottom: none !important;
+}
+
+/* ---------- Navigation ---------- */
+.main-navigation {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 2em 5% 0 64px;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li:first-child a {
+    padding-top: 0;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 0.4em 0;
+    color: #333;
+    text-decoration: none;
+    border-bottom: none !important;
+}
+
+.nav-menu a:hover {
+    color: #555;
+    border-bottom: none !important;
+}
+
+.current-menu-item a {
+    font-weight: 600;
+}
+
+/* ---------- Main Content ---------- */
+.site-content {
+    margin-left: 300px;
+    flex: 1;
+}
+
+.site-main {
+    padding-top: 260px;
+    max-width: 660px;
+}
+
+.content-area {
+    padding: 0 7.6923%;
+}
+
+/* ---------- Entry Content ---------- */
+.entry-content {
+    padding: 0;
+}
+
+.entry-content a,
+.paper-title a,
+.dataset-title a,
+.predoc-name a {
+    color: #38A5E1;
+    border-bottom: none;
+}
+
+.entry-content a:hover,
+.paper-title a:hover,
+.dataset-title a:hover,
+.predoc-name a:hover {
+    border-bottom: 1px solid #333;
+}
+
+/* ---------- About Page ---------- */
+.front-photo {
+    float: left;
+    margin-right: 80px;
+    margin-bottom: 1.5em;
+    width: 260px;
+}
+
+.links {
+    margin-bottom: 0.25em;
+}
+
+.links a {
+    font-size: 14px;
+    border-bottom: none !important;
+    color: #38A5E1;
+}
+
+.links a:hover {
+    border-bottom: 1px solid #333 !important;
+}
+
+.link-icon {
+    font-size: 13px;
+    display: inline-block;
+    width: 18px;
+    text-align: center;
+    color: #666;
+}
+
+/* ---------- Section Headings ---------- */
+h1.page-title {
+    color: #757575;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.4px;
+    margin-bottom: 2em;
+}
+
+h2.section-heading {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: -0.01em;
+    color: #6E6E6E;
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+}
+
+h2.section-heading:first-of-type {
+    margin-top: 0;
+}
+
+/* ---------- Research Page ---------- */
+.paper-list {
+    list-style: none;
+    padding: 0;
+}
+
+.paper-list li {
+    margin-bottom: 1.8em;
+    line-height: 1.6;
+}
+
+.paper-title {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.paper-authors {
+    color: #757575;
+    font-size: 13px;
+}
+
+.paper-detail {
+    color: #757575;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* ---------- CV Page ---------- */
+.cv-section {
+    margin-bottom: 2.5em;
+}
+
+.cv-section h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #6E6E6E;
+    margin-bottom: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cv-entry {
+    margin-bottom: 1em;
+    line-height: 1.6;
+}
+
+.cv-entry .cv-primary {
+    font-weight: 400;
+}
+
+.cv-entry .cv-secondary {
+    color: #757575;
+    font-size: 13px;
+}
+
+.cv-skills-grid {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 0.3em 1.5em;
+    font-size: 13px;
+}
+
+.cv-skills-grid dt {
+    font-weight: 400;
+    color: #333;
+}
+
+.cv-skills-grid dd {
+    color: #757575;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    display: none;
+}
+
+/* ---------- Responsive ---------- */
+@media screen and (max-width: 59.6875em) {
+    .site {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        min-width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .site-header {
+        margin-top: 14px;
+        padding: 0;
+        min-height: auto;
+    }
+
+    .main-navigation {
+        margin: 1em 0;
+    }
+
+    .nav-menu {
+        display: flex;
+        gap: 1.5em;
+    }
+
+    .nav-menu a {
+        padding: 0.2em 0;
+    }
+
+    .site-content {
+        margin-left: 0;
+    }
+
+    .site-main {
+        padding-top: 40px;
+    }
+
+    .content-area {
+        padding: 0 5%;
+    }
+
+    .front-photo {
+        margin-right: 0;
+        float: none;
+        width: 100%;
+        max-width: 260px;
+        margin-bottom: 1.5em;
+    }
+}
+
+@media screen and (max-width: 38.75em) {
+    .nav-menu {
+        flex-wrap: wrap;
+        gap: 0.5em 1.5em;
+    }
+
+    .front-photo {
+        max-width: 100%;
+    }
+}
