@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wernerd-econ.github.io/daniel-werner.github.io/sitemap.xml
